@@ -3,6 +3,7 @@
     --grisF : #c4c4c4;
     --grisL : #e4e4e4;
     --grisM : #d8d8d8;
+    --grisb : #b8bbc2;
     --noir : #000;
     --blanc : #fff;
     --rouge : #e00000;
@@ -114,8 +115,6 @@ li a:visited {
 li a:hover {font-family: "SpaceMono-Bold";}
 
 
-
-
 /* FOOTER */
 footer {
     display: flex;
@@ -130,3 +129,89 @@ footer {
     border-top: solid 1px var(--noir);
 }
 footer li {margin-left: 80px;}
+
+
+/* MODAL */
+.modal { 
+    display: none;
+    position: fixed;
+    opacity: 0;
+    z-index: 1; /* la modale doit-être en bas de la pile */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8); /* couleur de fond sombre */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+}
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-width: 80%;
+    height: auto;
+    background-color: var(--blanc);
+    padding: 20px;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.8s;
+    animation-name: animatetop;
+    animation-duration: 0.8s;
+    animation-timing-function: ease;
+}
+/* Animation de Modale */
+@-webkit-keyframes animatetop {
+    from {
+        top: 0;
+        opacity: 1;
+    }
+
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
+@keyframes animatetop {
+    from {
+        top: 0;
+        opacity: 1;
+    }
+
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
+/* Image dans la Modale */
+.modal-content img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Boutons de Fermeture */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Contact Form 7 */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
