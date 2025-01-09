@@ -1,0 +1,94 @@
+/* INFO SUR LES PHOTOS */
+
+.blockPhotoRelative {
+    position: relative;
+    flex: 1 1 40%;
+    aspect-ratio: 1/1;
+    line-height: normal;
+    /* Styles pour l'overlay et les icônes au survol */
+}
+
+@media screen and (max-width: 765px) {
+    .blockPhotoRelative {flex-basis: 100%;}
+}
+
+.blockPhotoRelative img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blockPhotoRelative .overlay:hover .eye-icon, .blockPhotoRelative .overlay:hover .fullscreen-icon {display: block;}
+  
+  /* Styles pour l'overlay au survol de l'image */
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: opacity 0.3s, background-color 0.3s;
+}
+
+.overlay:hover {
+    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.8);
+    
+}
+
+.overlay:hover h2, .overlay:hover h3 {display: block;}
+
+.overlay h2 {
+    text-transform: uppercase;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    color: white;
+    font-family: PoppinsRegular;
+    font-size: 14px;
+    display: none;
+    
+}
+@media screen and (max-width: 765px) {
+    .overlay h2 {font-size: 12px;}
+}
+
+.overlay h3 {
+    text-transform: uppercase;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    color: white;
+    font-family: PoppinsRegular;
+    font-size: 14px;
+    display: none;
+    
+}
+@media screen and (max-width: 765px) {
+    .overlay h3 {font-size: 12px;}
+}
+
+.overlay .eye-icon {
+    width: 48px;
+    height: 33.2px;
+    top: calc(50% - 24px);
+    left: calc(50% - 16px);
+    position: absolute;
+    display: none;
+}
+
+.overlay .fullscreen-icon {
+    position: absolute;
+    cursor: pointer;
+    z-index: 3;
+    width: 34px;
+    height: 34px;
+    top: 10px;
+    right: 10px;
+    border: 1px;
+    display: none;
+}
+  
